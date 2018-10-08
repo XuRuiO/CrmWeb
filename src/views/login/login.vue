@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login-card">
-      <Card icon="ios-log-in" title="XX系统欢迎您" :bordered="false">
+      <Card icon="ios-log-in" title="XX管理系统欢迎您" :bordered="false">
         <div class="form-card">
           <login-form @on-success-valid="loginFun"></login-form>
         </div>
