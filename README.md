@@ -1,6 +1,6 @@
 ﻿# vuedemo
 
-## 描述
+## 项目描述
 ```
 Vue+Vuex+Axios+IView UI 前后分离项目，后端接口是WebApi。
 ```
