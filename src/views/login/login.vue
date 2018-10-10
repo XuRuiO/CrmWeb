@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import LoginForm from '_c/login-form'
+import loginform from '_c/login-form'
 import { mapActions } from 'vuex'
 
 import axios from 'axios'
@@ -19,7 +19,7 @@ import axios from 'axios'
 export default {
   name: 'login',
   components: {
-    'login-form': LoginForm
+    'login-form': loginform
   },
   methods: {
     loginFun(datas) {
