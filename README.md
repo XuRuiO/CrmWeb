@@ -2,7 +2,7 @@
 
 ## 项目描述
 ```
-Vue+Vuex+Axios+IView UI 前后分离项目，后端接口使用的是WebApi。
+Vue+Vuex+Axios+IView UI 前后分离项目，Vue Cli 3.0，后端接口是WebApi。 
 ```
 
 ## Project setup
