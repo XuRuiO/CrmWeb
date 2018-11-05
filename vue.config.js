@@ -17,13 +17,32 @@ module.exports = {
   // 指定子路径。比如，如果你的应用部署在
   // https://www.foobar.com/my-app/
   // 那么将这个值改为 `/my-app/`
+  // 部署应用时的根路径(默认'/'),也可用相对路径(存在使用限制)
   baseUrl: BASE_URL,
 
   // 将构建好的文件输出到哪里
+  // 运行时生成的生产环境构建文件的目录(默认''dist''，构建之前会被清除)
   // outputDir: 'dist',
 
   // 放置静态资源的地方 (js/css/img/font/...)
+  // 放置生成的静态资源(s、css、img、fonts)的(相对于 outputDir 的)目录(默认'')
   // assetsDir: '',
+
+  // 指定生成的 index.html 的输出路径(相对于 outputDir)也可以是一个绝对路径。
+  // indexPath: 'index.html',
+
+  // pages: {
+  //   //pages 里配置的路径和文件名在你的文档目录必须存在 否则启动服务会报错
+  //   index: {
+  //     //除了 entry 之外都是可选的
+  //     entry: 'src/index/main.js', // page 的入口,每个“page”应该有一个对应的 JavaScript 入口文件
+  //     template: 'public/index.html', // 模板来源
+  //     filename: 'index.html', // 在 dist/index.html 的输出
+  //     title: 'Index Page', // 当使用 title 选项时,在 template 中使用：<title><%= htmlWebpackPlugin.options.title %></title>
+  //     chunks: ['chunk-vendors', 'chunk-common', 'index'] // 在这个页面中包含的块，默认情况下会包含,提取出来的通用 chunk 和 vendor chunk
+  //   },
+  //   subpage: 'src/subpage/main.js' //官方解释：当使用只有入口的字符串格式时,模板会被推导为'public/subpage.html',若找不到就回退到'public/index.html',输出文件名会被推导为'subpage.html'
+  // },
 
   // 是否在保存的时候使用 `eslint-loader` 进行检查。
   // 有效的值：`ture` | `false` | `"error"`
@@ -80,7 +99,7 @@ module.exports = {
   // 配置 webpack-dev-server 行为。
   devServer: {
     open: true, //当open选项被设置为true时，dev server将直接打开浏览器
-    host: '0.0.0.0', //设置服务器的主机号，默认是localhost，但是可以自己进行设置。 此时，localhost:9000和192.168.0.25:9000都能访问成功
+    host: 'localhost', //设置服务器的主机号，默认是localhost，但是可以自己进行设置。 此时，localhost:9000和192.168.0.25:9000都能访问成功
     port: 9092, //默认端口为8080，可以指定端口
     https: false,
     hotOnly: false,
