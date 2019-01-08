@@ -12,6 +12,7 @@ import 'iview/dist/styles/iview.css'
 Vue.use(iView, axios)
 
 Vue.config.productionTip = true //true:作用是阻止 vue 在启动时生成生产提示。
+Vue.config.silent = true //取消 Vue 所有的日志与警告
 
 // 挂在元素得两种方法：
 // 方法一
