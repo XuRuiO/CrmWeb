@@ -5,6 +5,7 @@
 
 ## 项目描述
 ```
+CRM后台管理系统
 Vue+Vuex+Axios+IView UI 前后分离项目，Vue-Cli 3.0 脚手架，后端接口是.Net Core WebApi。 
 ```
 
