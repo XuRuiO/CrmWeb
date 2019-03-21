@@ -5,22 +5,22 @@
 Vue+Vuex+Axios+IView UI 前后分离项目，Vue-Cli 3.0 脚手架，后端接口是WebApi。 
 ```
 
-## Project setup
+## 安装依赖项
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发环境运行此命令行
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 生产环境运行此命令行
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### EsLint根据ES Ruler自动修复
 ```
 npm run lint
 ```

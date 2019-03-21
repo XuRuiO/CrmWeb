@@ -1,11 +1,7 @@
 <template>
   <div class="login">
     <div class="login-card">
-      <Card
-        icon="ios-log-in"
-        title="XX系统欢迎您"
-        :bordered="false"
-      >
+      <Card icon="ios-log-in" title="XX系统欢迎您" :bordered="false">
         <div class="form-card">
           <login-form @on-success-valid="loginFun"></login-form>
         </div>
@@ -15,19 +11,19 @@
 </template>
 
 <script>
-import loginform from "_c/login-form";
-import { mapActions } from "vuex";
+import loginform from '_c/login-form';
+import { mapActions } from 'vuex';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "login",
+  name: 'login',
   components: {
-    "login-form": loginform
+    'login-form': loginform
   },
   methods: {
     loginFun(datas) {
-      this.$message.success("11111");
+      this.$message.success('11111');
       // axios({
       //   // `method` 是创建请求时使用的方法
       //   method: 'POST',
@@ -82,5 +78,5 @@ export default {
 </script>
 
 <style lang="less">
-@import "./login.less";
+@import './login.less';
 </style>
