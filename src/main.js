@@ -20,15 +20,15 @@ Vue.prototype.$message = Message;
 // 挂在元素得两种方法：
 // 方法一
 // new Vue({
-//   el: '#app',    //vue父实例的挂载点
-//   router,    // 注入到根实例中
-//   store,
+//   el: '#app',  //vue父实例的挂载点
+//   router,  // 注入到根实例中
+//   store, //注册store(这可以把 store 的实例注入所有的子组件)
 //   render: h => h(App)
 // })
 
 // 方法二
 new Vue({
   router,
-  store,
+  store,  //注册store(这可以把 store 的实例注入所有的子组件)
   render: h => h(App) //渲染组件,使用导入的App,es6对象写法
 }).$mount('#app')

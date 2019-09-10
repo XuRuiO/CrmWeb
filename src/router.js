@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// 引入组件    @ 表示 路劲/src
+// 引入组件    @ 表示 路径/src
 
 // 要告诉vue，使用VueRouter
 Vue.use(Router)

@@ -12,7 +12,7 @@ module.exports = {
   },
   extends: ['plugin:vue/essential', '@vue/standard'],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off', ////允许在开发环境下使用console。
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',  //允许在开发环境下使用console。
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off', //允许在开发环境下使用debugger。
     'no-new': 0, //禁止在使用new构造一个实例后不赋值
     'spaced-comment': 0, //注释风格要不要有空格什么的
@@ -30,7 +30,7 @@ module.exports = {
     'no-label-var': 0, //label名不能与var声明的变量名相同
     'no-unused-expressions': 0, //禁止无用的表达式
     semi: 0, //语句强制分号结尾
-    'key-spacing':0,    //对象字面量中冒号的前后空格
+    'key-spacing': 0,    //对象字面量中冒号的前后空格
     'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }]   //iView将标签渲染为原生html标签时，由于这些标签是自闭合的，所以有end标签会报错。
   },
   parserOptions: {
