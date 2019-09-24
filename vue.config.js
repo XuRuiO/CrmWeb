@@ -9,6 +9,7 @@ const resolve = dir => {
 //项目部署的基础路径
 const BASE_URL = process.env.NODE_ENV === 'development' ? '/' : 'http://140.143.237.11:9092/'
 
+// 配置文件会被自动加载
 module.exports = {
   // 项目部署的基础路径
   // 我们默认假设你的应用将会部署在域名的根部，
@@ -57,8 +58,8 @@ module.exports = {
   // 通过这个选项可以显式转译一个依赖。
   // transpileDependencies: [/* string or regex */],
 
-  // 是否为生产环境构建生成 source map？
-  // productionSourceMap: true,
+  // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
+  productionSourceMap: false,
 
   // 调整内部的 webpack 配置。
   // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/webpack.md
@@ -68,7 +69,7 @@ module.exports = {
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
       .set('_c', resolve('src/components'))
   },
-  configureWebpack: () => {},
+  configureWebpack: () => { },
 
   // CSS 相关选项
   // css: {
@@ -120,7 +121,7 @@ module.exports = {
         }
       }
     },
-    before: app => {}
+    before: app => { }
   },
 
   // 三方插件的选项
