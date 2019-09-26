@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     loginFun(datas) {
-      this.$message.success('11111');
       // axios({
       //   // `method` 是创建请求时使用的方法
       //   method: 'POST',
@@ -55,7 +54,6 @@ export default {
       //     //请求异常的回调函数
       //     console.log(error)
       //   })
-
       // axios({
       //   // `method` 是创建请求时使用的方法
       //   method: 'GET',
