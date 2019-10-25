@@ -1,16 +1,4 @@
-<template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
-<style lang="less">
+<style lang="less" scoped>
 .size {
   width: 100%;
   height: 100%;
@@ -28,3 +16,15 @@ body {
   .size;
 }
 </style>
+
+<template>
+  <div id="app">
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App'
+};
+</script>

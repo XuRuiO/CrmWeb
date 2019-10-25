@@ -1,3 +1,9 @@
+<style lang="less">
+.login-form-login-btn {
+  margin-top: 10px;
+}
+</style>
+
 <template>
   <Form ref="loginform" :model="form" :rules="rules">
     <FormItem prop="userName">
@@ -86,7 +92,3 @@ export default {
   }
 };
 </script>
-
-<style lang="less">
-@import './login-form.less';
-</style>

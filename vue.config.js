@@ -19,7 +19,7 @@ module.exports = {
   // https://www.foobar.com/my-app/
   // 那么将这个值改为 `/my-app/`
   // 部署应用时的根路径(默认'/'),也可用相对路径(存在使用限制)
-  baseUrl: BASE_URL,
+  publicPath: BASE_URL,
 
   // 将构建好的文件输出到哪里
   // 运行时生成的生产环境构建文件的目录(默认''dist''，构建之前会被清除)

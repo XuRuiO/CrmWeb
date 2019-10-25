@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
 // 引入组件    @ 表示 路径/src
 
 // 要告诉vue，使用VueRouter
-Vue.use(Router)
+Vue.use(Router);
 
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
@@ -17,16 +17,25 @@ Vue.use(Router)
  */
 
 export default new Router({
-  mode: 'history',    //在创建的 router 对象中，如果不配置 mode，就会使用默认的 hash 模式，该模式下会将路径格式化为 #! 开头。添加 mode: 'history' 之后将使用 HTML5 history 模式，该模式下没有 # 前缀，而且可以使用 pushState 和 replaceState 来管理记录。
+  mode: 'history', //在创建的 router 对象中，如果不配置 mode，就会使用默认的 hash 模式，该模式下会将路径格式化为 #! 开头。添加 mode: 'history' 之后将使用 HTML5 history 模式，该模式下没有 # 前缀，而且可以使用 pushState 和 replaceState 来管理记录。
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'login',
+    //   meta: {
+    //     title: '登录',
+    //     hideInMenu: true
+    //   },
+    //   component: () => import('@/views/login/login')
+    // },
     {
       path: '/',
-      name: 'login',
+      name: 'home',
       meta: {
-        title: '登录',
+        title: '首页',
         hideInMenu: true
       },
-      component: () => import('@/views/login/login')
+      component: () => import('@/views/home/home')
     }
   ]
-})
+});
