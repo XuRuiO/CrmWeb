@@ -1,27 +1,3 @@
-<style lang="less">
-.login {
-  width: 100%;
-  height: 100%;
-  background-image: url('~@/assets/img/login.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-
-  &-card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    //定义转换，只是用 Y 轴的值。在Y轴根据值上下移动
-    transform: translateY(-150px) translateX(-180px);
-  }
-
-  .form-card {
-    padding: 10px 0 0;
-  }
-}
-</style>
-
 <template>
   <div class="login">
     <div class="login-card">
@@ -46,6 +22,7 @@ export default {
   },
   methods: {
     loginFun(datas) {
+      this.$router.push({ path: 'home' });
       // axios({
       //   // `method` 是创建请求时使用的方法
       //   method: 'POST',
@@ -97,3 +74,7 @@ export default {
   }
 };
 </script>
+
+<style lang="less">
+@import './login.less';
+</style>

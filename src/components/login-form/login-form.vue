@@ -1,27 +1,13 @@
-<style lang="less">
-.login-form-login-btn {
-  margin-top: 10px;
-}
-</style>
-
 <template>
   <Form ref="loginform" :model="form" :rules="rules">
     <FormItem prop="userName">
-      <Input type="text" v-model="form.userName" placeholder="请输入用户名">
-      <span slot="prepend">
-        <Icon type="ios-person" :size="16" />
-      </span>
-      </Input>
+      <Input type="text" v-model="form.userName" prefix="ios-person" placeholder="请输入用户名" />
     </FormItem>
     <FormItem prop="password">
-      <Input type="text" v-model="form.password" placeholder="请输入密码">
-      <span slot="prepend">
-        <Icon type="md-lock" :size="16" />
-      </span>
-      </Input>
+      <Input type="password" v-model="form.password" prefix="ios-lock" placeholder="请输入密码" :password="true" />
     </FormItem>
     <FormItem>
-      <Button type="primary" @click="loginFun" long class="login-form-login-btn">登陆</Button>
+      <Button type="primary" @click="loginFun" long class="login-form-login-btn" icon="ios-log-in">登陆</Button>
     </FormItem>
   </Form>
 </template>
@@ -60,8 +46,8 @@ export default {
   data() {
     return {
       form: {
-        userName: '',
-        password: ''
+        userName: 'admin',
+        password: 'admin'
       }
     };
   },
@@ -92,3 +78,7 @@ export default {
   }
 };
 </script>
+
+<style lang="less">
+@import './login-form.less';
+</style>

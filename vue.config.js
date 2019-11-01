@@ -1,13 +1,14 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 const resolve = dir => {
-  return path.join(__dirname, dir)
-}
+  return path.join(__dirname, dir);
+};
 
 //development：开发环境    production：生产环境
 //项目部署的基础路径
-const BASE_URL = process.env.NODE_ENV === 'development' ? '/' : 'http://140.143.237.11:9092/'
+const BASE_URL =
+  process.env.NODE_ENV === 'development' ? '/' : 'http://140.143.237.11:9092/';
 
 // 配置文件会被自动加载
 module.exports = {
@@ -67,9 +68,9 @@ module.exports = {
     config.resolve.alias
       .set('_r', resolve('')) // _r：表示当前项目的根目录 /vuedemo
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
-      .set('_c', resolve('src/components'))
+      .set('_c', resolve('src/components'));
   },
-  configureWebpack: () => { },
+  configureWebpack: () => {},
 
   // CSS 相关选项
   // css: {
@@ -121,9 +122,9 @@ module.exports = {
         }
       }
     },
-    before: app => { }
+    before: app => {}
   },
 
   // 三方插件的选项
   pluginOptions: {}
-}
+};
