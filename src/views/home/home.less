@@ -1,45 +1,63 @@
 .layout {
   height: 100%;
 
-  .layout-header-bar {
+  .left-sider {
+    overflow: hidden;
+    background: #001529;
+
+    .ivu-layout-sider-children {
+      //左侧菜单超出部分滚动条方式
+      overflow-y: scroll;
+      margin-right: -16px;
+    }
+  }
+
+  .side-logo-wrapper {
+    height: 64px;
+    padding-top: 5px;
+
+    img {
+      height: 60px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+
+    img {
+      transform: rotate(-15deg);
+      transition: all 0.5s ease-in;
+    }
+
+    img:hover,
+    img:focus {
+      transform: rotate(0deg) scale(1.1);
+    }
+  }
+
+  .side-menu-wrapper {
+    user-select: none; //设置或检索是否允许用户选中文本
+
+    .ivu-menu-dark {
+      background: #001529;
+
+      .ivu-menu-submenu-title,
+      .ivu-menu-submenu-title:hover {
+        background: #001529 !important;
+      }
+
+      .ivu-menu-opened {
+        background: #000000;
+      }
+    }
+  }
+  .layout-header {
     background: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     padding: 0;
-  }
 
-  .menu-icon {
-    transition: all 0.3s;
+    .rotate-icon {
+      transform: rotate(-90deg); //旋转图标-90度
+    }
   }
-
-  .collapsed-menu span {
-    width: 0px;
-    transition: width 0.2s ease;
-  }
-  .collapsed-menu i {
-    transform: translateX(5px);
-    transition: font-size 0.2s ease 0.2s, transform 0.2s ease 0.2s;
-    vertical-align: middle;
-    font-size: 22px;
-  }
-
-  .rotate-icon {
-    transform: rotate(-90deg); //旋转图标-90度
-  }
-}
-
-.menu-item span {
-  display: inline-block;
-  overflow: hidden;
-  width: 69px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: bottom;
-  transition: width 0.2s ease 0.2s;
-}
-
-.menu-item i {
-  transform: translateX(0px);
-  transition: font-size 0.2s ease, transform 0.2s ease;
-  vertical-align: middle;
-  font-size: 16px;
 }

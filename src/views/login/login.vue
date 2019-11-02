@@ -1,24 +1,32 @@
 <template>
   <div class="login">
-    <div class="login-card">
-      <Card icon="ios-log-in" title="XX系统欢迎您" :bordered="false">
+    <el-card class="login-card">
+      <div slot="header">
+        <span>XX系统欢迎您</span>
+      </div>
+      <el-input placeholder="请输入用户名" ></el-input>
+
+    </el-card>
+
+    <!-- <div class="login-card">
+      <Card icon="ios-log-in" title="" :bordered="false">
         <div class="form-card">
           <login-form @on-success-valid="loginFun"></login-form>
         </div>
       </Card>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import loginform from '_c/login-form';
+// import loginform from '_c/login-form';
 import { mapActions } from 'vuex';
 import axios from 'axios';
 
 export default {
   name: 'login',
   components: {
-    'login-form': loginform
+    // 'login-form': loginform
   },
   methods: {
     loginFun(datas) {
