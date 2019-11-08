@@ -1,80 +1,105 @@
 <template>
-  <Layout class="layout">
-    <Sider breakpoint="md" ref="sider" hide-trigger collapsible :width="260" :collapsed-width="80" v-model="isCollapsed" class="left-sider">
-      <div class="side-logo-wrapper">
-        <img :src="maxLogo" />
+  <el-container class="container">
+    <el-aside width="260px" class="container-aside">
+      <div class="aside-menu-wrapper">
+        <el-menu default-active="3-1">
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-setting"></i>
+              <span>文章管理</span>
+            </template>
+            <el-menu-item index="1-1">
+              <i class="el-icon-location"></i>
+              <span>内容管理</span>
+            </el-menu-item>
+            <el-menu-item index="1-2">
+              <i class="el-icon-tickets"></i>
+              <span>评论管理</span>
+            </el-menu-item>
+            <el-menu-item index="1-3">
+              <i class="el-icon-attract"></i>
+              <span>举报管理</span>
+            </el-menu-item>
+          </el-submenu>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-coordinate"></i>
+              <span>用户管理</span>
+            </template>
+            <el-menu-item index="2-1">
+              <i class="el-icon-collection-tag"></i>
+              <span>新增用户</span>
+            </el-menu-item>
+            <el-menu-item index="2-2">
+              <i class="el-icon-film"></i>
+              <span>活跃用户</span>
+            </el-menu-item>
+          </el-submenu>
+          <el-submenu index="3">
+            <template slot="title">
+              <i class="el-icon-suitcase"></i>
+              <span>统计分析</span>
+            </template>
+            <el-menu-item index="3-1">
+              <i class="el-icon-suitcase"></i>
+              <span>新增和启动</span>
+            </el-menu-item>
+            <el-menu-item index="3-2">
+              <i class="el-icon-suitcase"></i>
+              <span>活跃分析</span>
+            </el-menu-item>
+            <el-menu-item index="3-3">
+              <i class="el-icon-suitcase"></i>
+              <span>时段分析</span>
+            </el-menu-item>
+            <el-menu-item index="3-4">
+              <i class="el-icon-suitcase"></i>
+              <span>新增和启动</span>
+            </el-menu-item>
+            <el-menu-item index="3-5">
+              <i class="el-icon-suitcase"></i>
+              <span>活跃分析</span>
+            </el-menu-item>
+            <el-menu-item index="3-6">
+              <i class="el-icon-suitcase"></i>
+              <span>时段分析</span>
+            </el-menu-item>
+            <el-menu-item index="3-7">
+              <i class="el-icon-suitcase"></i>
+              <span>新增和启动</span>
+            </el-menu-item>
+            <el-menu-item index="3-8">
+              <i class="el-icon-suitcase"></i>
+              <span>活跃分析</span>
+            </el-menu-item>
+            <el-menu-item index="3-9">
+              <i class="el-icon-suitcase"></i>
+              <span>时段分析</span>
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
       </div>
-      <div class="side-menu-wrapper">
-        <Menu theme="dark" width="auto" accordion active-name="1-2" :open-names="['1']">
-          <Submenu name="1">
-            <template slot="title">
-              <Icon type="ios-paper" />
-              内容管理
-            </template>
-            <MenuItem name="1-1">
-            <Icon type="md-leaf" />
-            文章管理
-            </MenuItem>
-            <MenuItem name="1-2">评论管理</MenuItem>
-            <MenuItem name="1-3">举报管理</MenuItem>
-          </Submenu>
-          <Submenu name="2">
-            <template slot="title">
-              <Icon type="ios-people" />
-              用户管理
-            </template>
-            <MenuItem name="2-1">新增用户</MenuItem>
-            <MenuItem name="2-2">活跃用户</MenuItem>
-          </Submenu>
-          <Submenu name="3">
-            <template slot="title">
-              <Icon type="ios-stats" />
-              统计分析
-            </template>
-            <MenuItem name="3-1">新增和启动</MenuItem>
-            <MenuItem name="3-2">活跃分析</MenuItem>
-            <MenuItem name="3-3">时段分析</MenuItem>
-          </Submenu>
-        </Menu>
-      </div>
-    </Sider>
-    <Layout>
-      <Header class="layout-header">
-        <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px',cursor: 'pointer'}" type="md-menu" size="24"></Icon>
-      </Header>
-      <!-- <Content :style="{margin: '20px', background: '#fff', minHeight: '300px'}">
-        Content
-      </Content>
-      <Footer>
-        Footer
-      </Footer> -->
-    </Layout>
-  </Layout>
+    </el-aside>
+    <el-container>
+      <el-header class="container-header">
+        头部
+      </el-header>
+      <el-main>
+        内容
+      </el-main>
+      <el-footer>
+        底部
+      </el-footer>
+    </el-container>
+  </el-container>
 </template>
+
 <script>
 import maxLogo from '@/assets/img/ruiO.png';
 
 export default {
   data() {
-    return {
-      isCollapsed: false, //侧边栏是否收起
-      maxLogo: maxLogo
-    };
-  },
-  computed: {
-    //通过计算属性，控制左侧菜单展开/收起的样式
-    menuitemClass() {
-      return ['menu-item', this.isCollapsed ? 'collapsed-menu' : ''];
-    },
-    //通过计算属性，控制左侧菜单展开/收起图标的样式
-    rotateIcon() {
-      return ['menu-icon', this.isCollapsed ? 'rotate-icon' : ''];
-    }
-  },
-  methods: {
-    collapsedSider() {
-      this.$refs.sider.toggleCollapse();
-    }
+    return {};
   }
 };
 </script>

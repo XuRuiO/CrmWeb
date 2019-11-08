@@ -1,63 +1,79 @@
-.layout {
+.container {
   height: 100%;
 
-  .left-sider {
-    overflow: hidden;
+  //菜单栏
+  .container-aside {
     background: #001529;
-
-    .ivu-layout-sider-children {
-      //左侧菜单超出部分滚动条方式
-      overflow-y: scroll;
-      margin-right: -16px;
-    }
   }
 
-  .side-logo-wrapper {
-    height: 64px;
-    padding-top: 5px;
-
-    img {
-      height: 60px;
-      width: auto;
-      display: block;
-      margin: 0 auto;
-      cursor: pointer;
-    }
-
-    img {
-      transform: rotate(-15deg);
-      transition: all 0.5s ease-in;
-    }
-
-    img:hover,
-    img:focus {
-      transform: rotate(0deg) scale(1.1);
-    }
-  }
-
-  .side-menu-wrapper {
-    user-select: none; //设置或检索是否允许用户选中文本
-
-    .ivu-menu-dark {
-      background: #001529;
-
-      .ivu-menu-submenu-title,
-      .ivu-menu-submenu-title:hover {
-        background: #001529 !important;
-      }
-
-      .ivu-menu-opened {
-        background: #000000;
-      }
-    }
-  }
-  .layout-header {
+  //头部
+  .container-header {
     background: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     padding: 0;
 
-    .rotate-icon {
-      transform: rotate(-90deg); //旋转图标-90度
-    }
+    // .rotate-icon {
+    //   transform: rotate(-90deg); //旋转图标-90度
+    // }
   }
+
+  // .left-sider {
+  //   overflow: hidden;
+  //   background: #001529;
+
+  //   .ivu-layout-sider-children {
+  //     //左侧菜单超出部分滚动条方式
+  //     overflow-y: scroll;
+  //     margin-right: -16px;
+  //   }
+  // }
+
+  // .side-logo-wrapper {
+  //   height: 64px;
+  //   padding-top: 5px;
+
+  //   img {
+  //     height: 60px;
+  //     width: auto;
+  //     display: block;
+  //     margin: 0 auto;
+  //     cursor: pointer;
+  //   }
+
+  //   img {
+  //     transform: rotate(-15deg);
+  //     transition: all 0.5s ease-in;
+  //   }
+
+  //   img:hover,
+  //   img:focus {
+  //     transform: rotate(0deg) scale(1.1);
+  //   }
+  // }
+
+  // .side-menu-wrapper {
+  //   user-select: none; //设置或检索是否允许用户选中文本
+
+  //   .ivu-menu-dark {
+  //     background: #001529;
+
+  //     .ivu-menu-submenu-title,
+  //     .ivu-menu-submenu-title:hover {
+  //       background: #001529 !important;
+  //     }
+
+  //     .ivu-menu-opened {
+  //       background: #000000;
+  //     }
+  //   }
+  // }
+  // .layout-header {
+  //   background: #fff;
+  //   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  //   padding: 0;
+
+  //   .rotate-icon {
+  //     transform: rotate(-90deg); //旋转图标-90度
+  //   }
+  // }
 }

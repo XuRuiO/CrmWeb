@@ -1,64 +1,43 @@
 <template>
-  <Form ref="loginform" :model="form" :rules="rules">
-    <FormItem prop="userName">
-      <Input type="text" v-model="form.userName" prefix="ios-person" placeholder="请输入用户名" />
-    </FormItem>
-    <FormItem prop="password">
-      <Input type="password" v-model="form.password" prefix="ios-lock" placeholder="请输入密码" :password="true" />
-    </FormItem>
-    <FormItem>
-      <Button type="primary" @click="loginFun" long class="login-form-login-btn" icon="ios-log-in">登陆</Button>
-    </FormItem>
-  </Form>
+  <el-form ref="loginform" :model="form" :rules="rules" label-width="0px">
+    <el-form-item prop="userName">
+      <el-input v-model="form.userName" prefix-icon="el-icon-user" placeholder="请输入用户名"></el-input>
+    </el-form-item>
+    <el-form-item prop="password">
+      <el-input v-model="form.password" type="password" show-password prefix-icon="el-icon-lock" placeholder="请输入密码"></el-input>
+    </el-form-item>
+    <el-form-item>
+      <el-button type="primary" @click="loginFun" class="login-form-login-btn">登陆</el-button>
+    </el-form-item>
+  </el-form>
 </template>
 
 <script>
 export default {
   name: 'login-form',
-  props: {
-    userNameRules: {
-      type: Array,
-      //默认值是一个工厂函数返回对象
-      default: () => {
-        return [
-          {
-            required: true,
-            message: '用户名不能为空',
-            trigger: 'blur'
-          }
-        ];
-      }
-    },
-    passwordRules: {
-      type: Array,
-      //默认值是一个工厂函数返回对象
-      default: () => {
-        return [
-          {
-            required: true,
-            message: '密码不能为空',
-            trigger: 'blur'
-          }
-        ];
-      }
-    }
-  },
   data() {
     return {
       form: {
         userName: 'admin',
         password: 'admin'
+      },
+      rules: {
+        userName: [
+          {
+            required: true,
+            message: '用户名不能为空',
+            trigger: 'blur'
+          }
+        ],
+        password: [
+          {
+            required: true,
+            message: '密码不能为空',
+            trigger: 'blur'
+          }
+        ]
       }
     };
-  },
-  //计算属性
-  computed: {
-    rules() {
-      return {
-        userName: this.userNameRules,
-        password: this.passwordRules
-      };
-    }
   },
   //方法
   methods: {

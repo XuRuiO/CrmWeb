@@ -9,8 +9,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
 // 告诉vue使用Element-Ui组件
-Vue.use(ElementUI, { size: 'medium' });
-Vue.use(axios);
+Vue.use(ElementUI, { size: 'medium' }, axios);
 
 Vue.config.productionTip = true; //true:作用是阻止 vue 在启动时生成生产提示。
 Vue.config.silent = true; //取消 Vue 所有的日志与警告
