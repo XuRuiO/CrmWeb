@@ -8,7 +8,7 @@ const resolve = dir => {
 //development：开发环境    production：生产环境
 //项目部署的基础路径
 const BASE_URL =
-  process.env.NODE_ENV === 'development' ? '/' : 'http://140.143.237.11:9092/';
+  process.env.NODE_ENV === 'development' ? '/' : './';
 
 // 配置文件会被自动加载
 module.exports = {
