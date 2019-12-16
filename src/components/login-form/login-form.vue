@@ -7,7 +7,7 @@
       <el-input v-model="form.password" type="password" show-password prefix-icon="el-icon-lock" placeholder="请输入密码"></el-input>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="loginFun" class="login-form-login-btn">登陆</el-button>
+      <el-button type="primary" @click="loginFun" class="login-form-login-btn" :loading="loading">登陆</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -19,7 +19,7 @@ export default {
     return {
       form: {
         userName: 'admin',
-        password: 'admin'
+        password: '123456'
       },
       rules: {
         userName: [
@@ -36,7 +36,8 @@ export default {
             trigger: 'blur'
           }
         ]
-      }
+      },
+      loading: false
     };
   },
   //方法
@@ -44,6 +45,7 @@ export default {
     loginFun() {
       this.$refs.loginform.validate(valid => {
         if (valid) {
+          this.loading = true;
           let datas = {
             userName: this.form.userName,
             password: this.form.password

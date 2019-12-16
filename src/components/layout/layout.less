@@ -1,0 +1,50 @@
+.container {
+  height: 100%;
+
+  //头部
+  .container-header {
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    height: 70px;
+    line-height: 70px;
+
+    .global-header {
+      position: relative;
+      padding: 0;
+      height: 70px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 21, 41, 0.08);
+
+      .global-header-trigger {
+        padding: 0px 21px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s, padding 0s;
+      }
+    }
+  }
+}
+
+.el-menu--vertical {
+  .el-menu {
+    background: #000c17 !important;
+
+    .el-menu-item {
+      background: #000c17 !important;
+    }
+
+    .el-menu-item:not(.is-active):hover {
+      background: #001529 !important;
+      color: #fff !important;
+    }
+
+    .el-menu-item:not(.is-active):hover i {
+      color: #fff !important;
+    }
+
+    .is-active {
+      background: #1890ff !important;
+    }
+  }
+}

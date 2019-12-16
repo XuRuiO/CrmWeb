@@ -7,8 +7,7 @@ const resolve = dir => {
 
 //development：开发环境    production：生产环境
 //项目部署的基础路径
-const BASE_URL =
-  process.env.NODE_ENV === 'development' ? '/' : './';
+const BASE_URL = process.env.NODE_ENV === 'development' ? '/' : '/';
 
 // 配置文件会被自动加载
 module.exports = {
@@ -102,26 +101,26 @@ module.exports = {
   devServer: {
     open: true, //当open选项被设置为true时，dev server将直接打开浏览器
     host: 'localhost', //设置服务器的主机号，默认是localhost，但是可以自己进行设置。 此时，localhost:9000和192.168.0.25:9000都能访问成功
-    port: 9092, //默认端口为8080，可以指定端口
+    port: 1002, //默认端口为8080，可以指定端口
     https: false,
     hotOnly: false,
     // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
     // string | Object
-    proxy: {
-      //输入/api 让其去访问http://localhost:3000/api
-      '/api': {
-        //设置调用的接口域名和端口号 ( 设置代理目标)
-        target: 'http://192.168.6.213:63698/',
-        //开启代理，在本地创建一个虚拟服务端，然后发送请求的数据，并同时接受请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题了。
-        changeOrigin: true,
-        //路径重写
-        pathRewrite: {
-          //这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://140.143.237.11:9093/api/test/hello，直接写‘/api/test/hello’即可
-          // '^/api': ''   //这种表示，路径中没有api，需要在target追加上/api类似于这种：http://140.143.237.11:9093/api/，配置出来是这样：http://140.143.237.11:9093/api/test/hello
-          '^/api': '/api'
-        }
-      }
-    },
+    // proxy: {
+    //   //输入/api 让其去访问http://localhost:3000/api
+    //   '/api': {
+    //     //设置调用的接口域名和端口号 ( 设置代理目标)
+    //     target: 'http://192.168.6.213:63698/',
+    //     //开启代理，在本地创建一个虚拟服务端，然后发送请求的数据，并同时接受请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题了。
+    //     changeOrigin: true,
+    //     //路径重写
+    //     pathRewrite: {
+    //       //这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://140.143.237.11:9093/api/test/hello，直接写‘/api/test/hello’即可
+    //       // '^/api': ''   //这种表示，路径中没有api，需要在target追加上/api类似于这种：http://140.143.237.11:9093/api/，配置出来是这样：http://140.143.237.11:9093/api/test/hello
+    //       '^/api': '/api'
+    //     }
+    //   }
+    // },
     before: app => {}
   },
 
