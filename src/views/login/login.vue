@@ -4,7 +4,7 @@
       <div slot="header">
         <span>XX系统欢迎您</span>
       </div>
-      <login-form @on-success-valid="loginFun" ref="loginForm" />
+      <login-form @on-success-valid="loginFun" ref="loginform" />
       <p class="login-tip">输入任意用户名和密码即可</p>
     </el-card>
   </div>
@@ -21,13 +21,13 @@ export default {
     loginFun(datas) {
       login(datas)
         .then(res => {
-          this.$refs.loginForm.loading = false;
+          this.$refs.loginform.loading = false;
           if (res.statusCode === 200) {
             this.$router.push({ name: 'layout' });
           }
         })
         .catch(() => {
-          this.$refs.loginForm.loading = false;
+          this.$refs.loginform.loading = false;
         });
     }
   }

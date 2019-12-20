@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import aside from '_c/aside';
+import Aside from '_c/aside';
 
 export default {
   name: 'layout',
-  components: { aside },
+  components: { Aside },
   data() {
     return {};
   },
