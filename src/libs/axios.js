@@ -1,11 +1,12 @@
 import axios from 'axios'; //一个基于Promise（ES6中用于处理异步的）的HTTP库
-import store from '@/store';
-import config from '@/config';
+import config from '@/config'; //引入自定义的配置文件
 import { Message, MessageBox } from 'element-ui';
+
+const { baseUrl } = config;
 
 //创建axios实例
 const instance = axios.create({
-  baseURL: process.env.NODE_ENV === 'development' ? config.baseUrl.dev : config.baseUrl.pro,
+  baseURL: process.env.NODE_ENV === 'development' ? baseUrl.dev : baseUrl.pro,
   timeout: 5000 //指定请求超时的毫秒数(0 表示无超时时间)
 });
 
@@ -24,7 +25,7 @@ instance.interceptors.response.use(
   response => {
     const res = response.data;
 
-    if (res.statusCode === 200) {
+    if (res.StatusCode === 200) {
       return res;
     } else {
       Message({
@@ -35,7 +36,7 @@ instance.interceptors.response.use(
       });
 
       //403：请求TOKEN失效
-      if (res.statusCode === 403) {
+      if (res.StatusCode === 403) {
         MessageBox.confirm('你已被登出，可以取消继续留在该页面，或者重新登录', '确定登出', {
           confirmButtonText: '重新登录',
           cancelButtonText: '取消',

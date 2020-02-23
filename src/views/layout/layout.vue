@@ -1,18 +1,16 @@
 <template>
   <el-container class="container">
-    <aside />
-
+    <!-- 左侧菜单栏 -->
+    <Aside />
     <el-container>
-      <el-header class="container-header">
-        <div class="global-header">
-          <!-- <span class="global-header-trigger" @click="triggerMenu">
-            <i :class="[isCollapse?'el-icon-s-unfold':'el-icon-s-fold']"></i>
-          </span> -->
-        </div>
-      </el-header>
+      <!-- 头部 -->
+      <Header />
+      <!-- 内容 -->
       <el-main>
         内容
+        <router-view />
       </el-main>
+      <!-- 底部 -->
       <el-footer>
         底部
       </el-footer>
@@ -22,15 +20,19 @@
 
 <script>
 import Aside from '_c/aside';
+import Header from '_c/header';
 
 export default {
   name: 'layout',
-  components: { Aside },
+  components: {
+    Aside,
+    Header
+  },
   data() {
     return {};
   },
   mounted() {
-    console.log('哈哈哈，欢迎来到首页！');
+    //
   },
   methods: {
     // triggerMenu() {
@@ -41,6 +43,8 @@ export default {
 };
 </script>
 
-<style lang="less">
-@import url('./layout.less');
+<style lang="less" scoped>
+.container {
+  height: 100%;
+}
 </style>

@@ -1,0 +1,29 @@
+.header-navs-user {
+  display: inline-block;
+  margin-right: 10px;
+
+  .user-dropdown {
+    padding: 0 10px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.025);
+    }
+
+    .focusing:focus {
+      outline: 0; //解决el-dropdown 点击之后显示的蓝色边框
+    }
+
+    .dropdown-badge {
+      user-select: none; //设置或检索是否允许用户选中文本
+      cursor: pointer;
+
+      .badge-avatar {
+        float: left;
+      }
+    }
+  }
+}
+
+/deep/ .el-badge__content {
+  vertical-align: text-bottom;
+}

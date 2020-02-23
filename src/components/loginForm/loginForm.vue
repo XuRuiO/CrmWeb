@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="loginform" :model="form" :rules="rules" label-width="0px">
+  <el-form ref="loginForm" :model="form" :rules="rules" label-width="0px">
     <el-form-item prop="userName">
       <el-input v-model="form.userName" prefix-icon="el-icon-user" placeholder="请输入用户名"></el-input>
     </el-form-item>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'login-form',
+  name: 'loginForm',
   data() {
     return {
       form: {
@@ -43,9 +43,8 @@ export default {
   //方法
   methods: {
     loginFun() {
-      this.$refs.loginform.validate(valid => {
+      this.$refs.loginForm.validate(valid => {
         if (valid) {
-          this.loading = true;
           let datas = {
             userName: this.form.userName,
             password: this.form.password
@@ -60,6 +59,6 @@ export default {
 };
 </script>
 
-<style lang="less">
-@import './login-form.less';
+<style lang="less" scoped>
+@import './loginForm.less';
 </style>

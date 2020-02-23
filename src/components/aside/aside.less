@@ -3,77 +3,8 @@
   background: #001529;
   transition: 0.28s;
 
-  //解决使用了el-scrollbar组件，出现的横向滚动条
-  .el-scrollbar__wrap {
+  //解决使用了el-scrollbar组件，出现的横向滚动条    /deep/:样式穿透
+  /deep/ .el-scrollbar__wrap {
     overflow-x: hidden;
-  }
-
-  .aside-logo-wrapper {
-    height: 65px;
-    padding-top: 5px;
-
-    img {
-      height: 60px;
-      display: block;
-      margin: 0 auto;
-      cursor: pointer;
-    }
-
-    img {
-      transform: rotate(-15deg);
-      transition: all 0.5s ease-in;
-    }
-
-    img:hover,
-    img:focus {
-      transform: rotate(0deg) scale(1.1);
-    }
-  }
-
-  .aside-menu-wrapper {
-    user-select: none; //设置或检索是否允许用户选中文本
-
-    .el-menu {
-      border: none;
-      height: 100%;
-      width: 100% !important;
-
-      //展开或者激活的菜单title的样式
-      .is-opened,
-      .is-active {
-        .el-submenu__title {
-          color: #fff !important;
-        }
-
-        i {
-          color: #fff !important;
-        }
-      }
-
-      .el-menu-item:hover,
-      .el-submenu__title:hover {
-        background: #001529 !important;
-        color: #fff !important;
-      }
-
-      .el-menu-item:hover i,
-      .el-submenu__title:hover i {
-        color: #fff !important;
-      }
-
-      .el-menu--inline {
-        li {
-          background: #000c17 !important;
-        }
-
-        li:hover {
-          color: #fff !important;
-        }
-
-        .is-active {
-          background: #1890ff !important;
-        }
-      }
-    }
   }
 }

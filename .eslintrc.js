@@ -31,7 +31,8 @@ module.exports = {
     'no-unused-expressions': 0, //禁止无用的表达式
     semi: 0, //语句强制分号结尾
     'key-spacing': 0, //对象字面量中冒号的前后空格
-    'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }] //iView将标签渲染为原生html标签时，由于这些标签是自闭合的，所以有end标签会报错。
+    'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }], //iView将标签渲染为原生html标签时，由于这些标签是自闭合的，所以有end标签会报错。
+    'handle-callback-err': 0
   },
   parserOptions: {
     parser: 'babel-eslint'

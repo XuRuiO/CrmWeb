@@ -1,0 +1,22 @@
+.aside-logo-wrapper {
+  height: 65px;
+  padding-top: 5px;
+
+  .wrapper-img {
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+    transform: rotate(-15deg);
+
+    &:hover,
+    &:focus {
+      transform: rotate(0deg) scale(1.1);
+    }
+  }
+
+  .active {
+    transform: rotate(0deg);
+  }
+}

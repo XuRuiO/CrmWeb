@@ -1,5 +1,7 @@
 const path = require('path');
-const webpack = require('webpack');
+
+//引入自定义配置文件
+const { title } = require('./src/config/index');
 
 const resolve = dir => {
   return path.join(__dirname, dir);
@@ -63,13 +65,15 @@ module.exports = {
 
   // 调整内部的 webpack 配置。
   // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/webpack.md
+  configureWebpack: config => {
+    config.name = title;
+  },
   chainWebpack: config => {
     config.resolve.alias
       .set('_r', resolve('')) // _r：表示当前项目的根目录 /vuedemo
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
       .set('_c', resolve('src/components'));
   },
-  configureWebpack: () => {},
 
   // CSS 相关选项
   // css: {
