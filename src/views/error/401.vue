@@ -1,12 +1,12 @@
 <template>
   <div>
-    客户列表
+    抱歉，你没有权限去该页面
   </div>
 </template>
 
 <script>
 export default {
-  name: 'customerList',
+  name: '401',
   data() {
     return {
       //

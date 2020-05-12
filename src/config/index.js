@@ -18,7 +18,18 @@ module.exports = {
     pro: 'http://140.143.237.11:9093/'
   },
   /**
-   * @description 默认打开的首页的路由name值，默认为layout页面
+   * @description 默认打开的首页的路由路径
    */
-  layoutName: 'layout'
+  layoutPath: '/dashboard',
+  /**
+   *@description 根据接口的路由对象，动态导入路由文件
+   */
+  importRouterFiles: {
+    dev(filePath) {
+      return require('@/views' + filePath + '.vue').default;
+    },
+    pro(filePath) {
+      return import('@/views' + filePath + '.vue');
+    }
+  }
 };

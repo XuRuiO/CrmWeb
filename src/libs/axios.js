@@ -1,8 +1,6 @@
 import axios from 'axios'; //一个基于Promise（ES6中用于处理异步的）的HTTP库
-import config from '@/config'; //引入自定义的配置文件
+import { baseUrl } from '@/config'; //引入自定义的配置文件
 import { Message, MessageBox } from 'element-ui';
-
-const { baseUrl } = config;
 
 //创建axios实例
 const instance = axios.create({

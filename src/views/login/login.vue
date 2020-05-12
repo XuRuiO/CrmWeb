@@ -24,7 +24,7 @@ export default {
       this.login(datas)
         .then(() => {
           this.$router.push({
-            name: this.$config.layoutName
+            path: this.$config.layoutPath
           });
           this.$refs.loginForm.loading = false;
         })

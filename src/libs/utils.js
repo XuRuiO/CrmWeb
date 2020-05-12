@@ -1,8 +1,5 @@
 import Cookies from 'js-cookie'; //引入js-cookie组件
-import config from '@/config';
-
-//前端Cookie的过期日期，默认1天
-const { cookieExpires } = config;
+import { cookieExpires } from '@/config'; //引入自定义的配置文件
 
 //定义token的键
 const tokenKey = 'AdminToken';
@@ -10,7 +7,7 @@ const tokenKey = 'AdminToken';
 //#region Token 的获取、设置、删除 方法
 
 export const setToken = token => {
-  Cookies.set(tokenKey, token, { expires: cookieExpires || 1 });
+  return Cookies.set(tokenKey, token, { expires: cookieExpires });
 };
 
 export const getToken = () => {
@@ -20,7 +17,19 @@ export const getToken = () => {
 };
 
 export const removeToken = () => {
-  Cookies.remove(tokenKey);
+  return Cookies.remove(tokenKey);
+};
+
+//#endregion
+
+//#region Routers 菜单相关的方法
+
+/**
+ * @description 过滤菜单数据中，IsHidden===true 的数据
+ * @param {Array}  routers  菜单数据源
+ */
+export const filterIsHiddenMenu = routers => {
+  return routers.filter(item => !item.Meta.IsHidden);
 };
 
 //#endregion

@@ -1,12 +1,12 @@
 <template>
   <div>
-    客户列表
+    客户维护
   </div>
 </template>
 
 <script>
 export default {
-  name: 'customerList',
+  name: 'customerMaintain',
   data() {
     return {
       //

@@ -1,3 +1,5 @@
+import { filterIsHiddenMenu } from '@/libs/utils';
+import { initialToLowerCase } from '@/libs/tools';
 import { getMenuNavigationBarTree } from '@/api/permission';
 
 const state = {
@@ -8,21 +10,28 @@ const state = {
 const mutations = {
   setRoutes: (state, routes) => {
     state.routes = routes;
+  },
+  setAddRoutes: (state, asyncRoutes) => {
+    state.addRoutes = asyncRoutes;
   }
 };
 
 const actions = {
   getRoutesTree({ commit }, datas) {
     return new Promise((resolve, reject) => {
-      getMenuNavigationBarTree()
-        .then(res => {
-          const { Data } = res;
-          console.log(Data);
-          resolve();
-        })
-        .catch(err => {
-          reject(err);
-        });
+      getMenuNavigationBarTree().then(res => {
+        const { Data } = res;
+
+        var routers = filterIsHiddenMenu(Data);
+        //存入菜单数据
+        commit('setRoutes', routers);
+
+        //生成路由对象
+        var asyncRoutes = initialToLowerCase(Data);
+        commit('setAddRoutes', asyncRoutes);
+
+        resolve();
+      });
     });
   }
 };
