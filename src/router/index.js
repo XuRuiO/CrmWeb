@@ -62,6 +62,7 @@ router.beforeEach(async (to, from, next) => {
     //获取路由信息
     var asyncRoutesMap = await store.dispatch('permission/getRoutesTree');
     var asyncRoutes = filterAsyncRouter(asyncRoutesMap);
+
     //动态添加路由
     router.addRoutes(asyncRoutes);
   }

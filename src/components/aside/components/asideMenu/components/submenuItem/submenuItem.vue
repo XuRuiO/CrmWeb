@@ -37,6 +37,9 @@ export default {
       //
     };
   },
+  mounted() {
+    //
+  },
   methods: {
     //验证是否存在子集菜单
     hasChildren(children = []) {

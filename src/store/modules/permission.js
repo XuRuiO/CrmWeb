@@ -30,7 +30,7 @@ const actions = {
         var asyncRoutes = initialToLowerCase(Data);
         commit('setAddRoutes', asyncRoutes);
 
-        resolve();
+        resolve(asyncRoutes);
       });
     });
   }

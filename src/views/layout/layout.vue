@@ -35,10 +35,7 @@ export default {
     //
   },
   methods: {
-    // triggerMenu() {
-    //   this.isCollapse = !this.isCollapse;
-    //   this.asideWidth = this.isCollapse ? '65px' : '260px';
-    // }
+    //
   }
 };
 </script>

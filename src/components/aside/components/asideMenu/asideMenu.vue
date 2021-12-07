@@ -1,6 +1,6 @@
 <template>
   <div class="aside-menu-wrapper">
-    <el-menu default-active="/dashboard" background-color="#001529" text-color="#ffffffa6" active-text-color="#fff" unique-opened :collapse="isCollapse">
+    <el-menu default-active="/dashboard" background-color="#001529" text-color="#ffffffa6" active-text-color="#fff" unique-opened :collapse="isCollapse" @select="handleSelect">
       <submenu-item v-for="item in routers" v-bind:key="item.Id" :item="item" />
     </el-menu>
   </div>
@@ -30,6 +30,11 @@ export default {
     return {
       //
     };
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      this.$router.push({ path: key });
+    }
   }
 };
 </script>

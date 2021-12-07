@@ -1,3 +1,11 @@
+/*
+ * @Author: 花果
+ * @Date: 2020-01-28 16:49:42
+ * @LastEditors: 花果
+ * @LastEditTime: 2021-04-22 14:31:23
+ * @Description: 路由菜单列表
+ */
+
 // 引入自定义组件    @ 表示 根路径/src，_c 表示 根路径/src/components
 
 /**
@@ -7,7 +15,7 @@
  *  icon: 该页面在左侧菜单、面包屑和标签导航处显示的图标
  *  isHidden：是否隐藏菜单在侧边导航栏出现
  *  isAffix：是否固钉在tagsView（标签导航）中，不可被删除
- *  IsUseLayout：是否使用Layout页面
+ *  isUseLayout：是否使用Layout页面
  *  orderSort：排序序号
  * }
  */
