@@ -7,7 +7,11 @@ const tokenKey = 'AdminToken';
 //#region Token 的获取、设置、删除 方法
 
 export const setToken = token => {
-  return Cookies.set(tokenKey, token, { expires: cookieExpires });
+  //通过时间戳，设置更小单位
+  let seconds = 3600; //秒
+  let expires = new Date(new Date() * 1 + seconds * 1000);
+  // return Cookies.set(tokenKey, token, { expires: cookieExpires });
+  return Cookies.set(tokenKey, token, { expires: expires });
 };
 
 export const getToken = () => {
@@ -29,7 +33,7 @@ export const removeToken = () => {
  * @param {Array}  routers  菜单数据源
  */
 export const filterIsHiddenMenu = routers => {
-  return routers.filter(item => !item.Meta.IsHidden);
+  return routers.filter(item => !item.meta.isHidden);
 };
 
 //#endregion

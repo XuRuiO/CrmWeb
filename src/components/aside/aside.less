@@ -3,12 +3,12 @@
   background: #001529;
   transition: 0.28s;
 
-  //解决使用了el-scrollbar组件，出现的横向滚动条    /deep/:样式穿透
-  /deep/ .el-scrollbar__wrap {
+  //解决使用了el-scrollbar组件，出现的横向滚动条    :deep():样式穿透
+  :deep(.el-scrollbar__wrap) {
     overflow-x: hidden;
   }
 
-  /deep/ .el-scrollbar__bar.is-horizontal {
+  :deep(.el-scrollbar__bar.is-horizontal) {
     height: 0px !important;
   }
 }

@@ -1,22 +1,22 @@
 <template>
   <div class="submenu-item-wrapper">
-    <template v-if="hasChildren(item.Children)">
-      <el-submenu :index="item.Path">
+    <template v-if="hasChildren(item.children)">
+      <el-submenu :index="item.path">
         <template slot="title">
-          <i :class="item.Meta.Icon"></i>
-          <span>{{item.Meta.Title}}</span>
+          <i :class="item.meta.icon"></i>
+          <span>{{item.meta.title}}</span>
         </template>
-        <el-menu-item v-for="itemChildren in item.Children" :index="itemChildren.Path" :key="itemChildren.key">
-          <i :class="itemChildren.Meta.Icon"></i>
-          <span>{{itemChildren.Meta.Title}}</span>
+        <el-menu-item v-for="itemChildren in item.children" :index="itemChildren.path" :key="itemChildren.key">
+          <i :class="itemChildren.meta.icon"></i>
+          <span>{{itemChildren.meta.title}}</span>
         </el-menu-item>
       </el-submenu>
     </template>
 
     <template v-else>
-      <el-menu-item :index="item.Path">
-        <i :class="item.Meta.Icon"></i>
-        <span>{{item.Meta.Title}}</span>
+      <el-menu-item :index="item.path">
+        <i :class="item.meta.icon"></i>
+        <span>{{item.meta.title}}</span>
       </el-menu-item>
     </template>
   </div>

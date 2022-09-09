@@ -23,9 +23,11 @@ export default {
       this.$refs.loginForm.loading = true;
       this.login(datas)
         .then(() => {
-          this.$router.push({
-            path: this.$config.layoutPath
-          });
+          this.$router
+            .push({
+              path: this.$config.layoutPath
+            })
+            .catch(() => {});
           this.$refs.loginForm.loading = false;
         })
         .catch(() => {

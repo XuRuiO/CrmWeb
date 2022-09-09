@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import userAvatar from '@/assets/img/user-avatar.jpg';
+import userAvatar from '@/assets/img/user-avatar-01.jpg';
 
 export default {
   name: 'user',

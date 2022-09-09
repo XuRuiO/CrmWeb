@@ -23,7 +23,7 @@ instance.interceptors.response.use(
   response => {
     const res = response.data;
 
-    if (res.StatusCode === 200) {
+    if (res.statusCode === 200) {
       return res;
     } else {
       Message({
@@ -34,7 +34,7 @@ instance.interceptors.response.use(
       });
 
       //403：请求TOKEN失效
-      if (res.StatusCode === 403) {
+      if (res.statusCode === 403) {
         MessageBox.confirm('你已被登出，可以取消继续留在该页面，或者重新登录', '确定登出', {
           confirmButtonText: '重新登录',
           cancelButtonText: '取消',

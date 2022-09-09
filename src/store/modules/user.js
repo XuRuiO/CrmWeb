@@ -17,9 +17,9 @@ const actions = {
     return new Promise((resolve, reject) => {
       login(datas)
         .then(res => {
-          const { Data } = res;
-          commit('setToken', Data);
-          setToken(Data);
+          const { data } = res;
+          commit('setToken', data);
+          setToken(data);
           resolve();
         })
         .catch(err => {

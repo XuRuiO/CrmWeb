@@ -17,20 +17,20 @@ const mutations = {
 };
 
 const actions = {
-  getRoutesTree({ commit }, datas) {
+  getRoutesTree({ commit }) {
     return new Promise((resolve, reject) => {
       getMenuNavigationBarTree().then(res => {
-        const { Data } = res;
+        const { data } = res;
 
-        var routers = filterIsHiddenMenu(Data);
+        var routers = filterIsHiddenMenu(data);
         //存入菜单数据
         commit('setRoutes', routers);
 
         //生成路由对象
-        var asyncRoutes = initialToLowerCase(Data);
+        var asyncRoutes = initialToLowerCase(data);
         commit('setAddRoutes', asyncRoutes);
 
-        resolve();
+        resolve(data);
       });
     });
   }

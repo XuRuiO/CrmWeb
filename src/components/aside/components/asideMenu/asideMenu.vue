@@ -1,7 +1,7 @@
 <template>
   <div class="aside-menu-wrapper">
     <el-menu default-active="/dashboard" background-color="#001529" text-color="#ffffffa6" active-text-color="#fff" unique-opened :collapse="isCollapse">
-      <submenu-item v-for="item in routers" v-bind:key="item.Id" :item="item" />
+      <submenu-item v-for="item in routers" v-bind:key="item.id" :item="item" />
     </el-menu>
   </div>
 </template>

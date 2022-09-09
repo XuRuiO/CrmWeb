@@ -6,7 +6,7 @@ module.exports = {
   /**
    * @description 前端Cookie的过期日期，默认1天
    */
-  cookieExpires: 1,
+  cookieExpires: 0.5,
   /**
    * @description api请求基础路径
    */
