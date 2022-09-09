@@ -30,6 +30,11 @@ export default {
     return {
       //
     };
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      this.$router.push({ path: key });
+    }
   }
 };
 </script>

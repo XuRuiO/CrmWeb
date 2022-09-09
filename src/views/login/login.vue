@@ -21,7 +21,7 @@ export default {
     ...mapActions('user', ['login']),
     loginFun(datas) {
       this.$refs.loginForm.loading = true;
-      this.login(datas)
+      this.login(datas) 
         .then(() => {
           this.$router
             .push({
